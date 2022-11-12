@@ -4,23 +4,17 @@ import { Button, HoverText } from './FeedbackOptions.styled';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <div>
-      {options.map((btn, i) => {
+      {options.map(i => {
         return (
-          <Button key={btn} type="button" onClick={onLeaveFeedback}>
-            <HoverText>{ucFirst(btn)}</HoverText>
-            <span>{ucFirst(btn)}</span>
+          <Button key={i} name={i} type="button" onClick={onLeaveFeedback}>
+            <HoverText>{i}</HoverText>
+            <span>{i}</span>
           </Button>
         );
       })}
     </div>
   );
 };
-
-function ucFirst(str) {
-  if (!str) return str;
-
-  return str[0].toUpperCase() + str.slice(1);
-}
 
 FeedbackOptions.propTypes = {
   options: PropTypes.array.isRequired,
