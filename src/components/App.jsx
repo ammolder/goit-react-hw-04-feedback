@@ -1,5 +1,5 @@
 import { Wrapper } from './App.styled';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FeedbackOptions } from 'components/FeedbackOptions';
 import { Statistics } from 'components/Statistics';
 import { Section } from './Section';
@@ -40,10 +40,6 @@ export const App = () => {
       (goodState * 100) / (goodState + neutralState + badState)
     );
   };
-
-  useEffect(() => {
-    console.log('start');
-  });
   return (
     <Wrapper>
       <Section title="Please leave a feedback">
